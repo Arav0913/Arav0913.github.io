@@ -276,29 +276,29 @@ ul,ol{margin:0;padding:0;list-style:none}
   .about-hero__photo{ position: static; margin-top: 8px }
 }
 
-/* --- Mobile-only layout for the Projects teaser --- */
+/* --- Mobile-only: stack Projects title ABOVE the cards and center everything --- */
 @media (max-width: 900px){
   .projects-teaser__inner{
-    grid-template-columns: 1fr;   /* stack like About */
-    justify-items: center;        /* center children in the grid */
-    align-items: start;
+    grid-template-columns: 1fr;   /* one column on phones */
+    grid-auto-rows: min-content;
     gap: 22px;
+    justify-items: center;        /* center children */
+    align-items: start;
   }
 
-  /* Title section first, centered, never wraps, auto-shrinks */
+  /* Put the big word first, centered */
   .projects-hero{
-    order: -1;                    /* title above the list */
+    grid-column: 1;
+    grid-row: 1;                  /* <- comes before the list */
     text-align: center;
     width: 100%;
     padding: 0 6%;
   }
   .projects-title{
-    font-size: clamp(32px, 17vw, 60px);
+    font-size: clamp(36px, 18vw, 64px);
     line-height: 1.02;
     transform: none !important;
-    white-space: nowrap;          /* keep on one line */
-    word-break: normal;
-    overflow-wrap: normal;
+    white-space: nowrap;          /* keep “Projects” on one line */
   }
   .projects-rule{
     width: 120px;
@@ -307,23 +307,17 @@ ul,ol{margin:0;padding:0;list-style:none}
     float: none;
   }
 
-  /* Card list centered with a comfortable max width */
+  /* Put the list under the title, centered and constrained */
   .projects-list{
     grid-column: 1;
+    grid-row: 2;                  /* <- beneath the title */
     width: 100%;
-    max-width: 560px;             /* centers/narrows the column */
-    margin: 6px auto 0;           /* puts it right under the title */
+    max-width: 560px;
+    margin: 6px auto 0;
     display: grid;
     gap: 14px;
   }
-  .project-item a{
-    border-radius: 18px;
-  }
 
-  /* Calm the big right-side glow on phones */
+  /* Remove the big right-side glow on phones */
   .projects-teaser__inner::after{ display:none; }
 }
-
-
-
-
