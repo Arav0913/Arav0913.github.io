@@ -33,6 +33,24 @@ if (burger && links) {
   io.observe(teaser);
 })();
 
+// Projects teaser: activate on scroll
+(() => {
+  const pt = document.querySelector('.projects-teaser');
+  if (!pt) return;
+
+  const io = new IntersectionObserver(
+    entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) pt.classList.add('active');
+        else pt.classList.remove('active');
+      });
+    },
+    { threshold: 0.35 }
+  );
+  io.observe(pt);
+})();
+
+
 // Mobile dropdown toggles
 document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
   btn.addEventListener('click', (e) => {
