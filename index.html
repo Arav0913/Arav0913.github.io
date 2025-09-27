@@ -4,7 +4,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Arav Grover</title>
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- Root-absolute so it works on every page -->
+  <link rel="stylesheet" href="/style.css?v=6" />
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
 <body>
@@ -12,13 +14,13 @@
   <!-- Sticky Glass Navbar -->
   <header class="nav">
     <div class="nav-inner">
-      <a class="brand" href="/">Arav Grover</a>
+      <a class="brand" href="/">ARAV GROVER</a>
 
       <nav class="nav-links" aria-label="Primary">
         <a href="/">Home</a>
         <a href="/about.html">About</a>
 
-        <!-- Projects dropdown -->
+        <!-- Projects -->
         <div class="dropdown">
           <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
             Projects <span class="chev">▾</span>
@@ -30,7 +32,7 @@
           </div>
         </div>
 
-        <!-- Experience dropdown -->
+        <!-- Experience -->
         <div class="dropdown">
           <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
             Experience <span class="chev">▾</span>
@@ -44,7 +46,7 @@
           </div>
         </div>
 
-        <!-- Certifications dropdown -->
+        <!-- Certifications -->
         <div class="dropdown">
           <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
             Certifications <span class="chev">▾</span>
@@ -68,37 +70,32 @@
   </header>
 
   <!-- About (teaser) -->
-<section class="about-teaser" id="about" aria-label="About preview">
-  <div class="about-teaser__inner">
-    <!-- Title + animated line -->
-    <div class="about-teaser__heading">
-      <h2 class="about-teaser__title">About</h2>
-      <span class="about-teaser__rule" aria-hidden="true"></span>
+  <section class="about-teaser" id="about" aria-label="About preview">
+    <div class="about-teaser__inner">
+      <div class="about-teaser__heading">
+        <h2 class="about-teaser__title">About</h2>
+        <span class="about-teaser__rule" aria-hidden="true"></span>
+      </div>
+
+      <div class="about-teaser__photo">
+        <img src="/assets/AG.jpg" alt="Arav Grover headshot" />
+      </div>
+
+      <a class="about-teaser__link" href="/about.html" aria-label="Open About page"></a>
     </div>
+  </section>
 
-    <!-- Headshot -->
-    <div class="about-teaser__photo">
-      <img src="assets/AG.jpg" alt="Arav Grover headshot">
-    </div>
-
-    <!-- Clickable overlay -->
-    <a class="about-teaser__link" href="/about.html" aria-label="Open About page"></a>
-  </div>
-</section>
-
-
-  <!-- Product-style banners -->
+  <!-- Banners -->
   <section class="banner dark" id="chatbot">
-    <div class="banner-bg" style="background-image:url('assets/chatbot.jpg')"></div>
+    <div class="banner-bg" style="background-image:url('/assets/chatbot.jpg')"></div>
     <div class="banner-content" data-aos="fade-up">
       <h2>iOS AI Chatbot</h2>
       <p>Contextual memory · Offline/online models · SwiftUI</p>
-      <!-- <a class="btn ghost" href="YOUR_GITHUB_LINK">View Code</a> -->
     </div>
   </section>
 
   <section class="banner light" id="nutriwise">
-    <div class="banner-bg" style="background-image:url('assets/nutriwise.jpg')"></div>
+    <div class="banner-bg" style="background-image:url('/assets/nutriwise.jpg')"></div>
     <div class="banner-content" data-aos="fade-up">
       <h2>NutriWise</h2>
       <p>Next.js + AI insights · Auth0 login · Journaling</p>
@@ -124,7 +121,7 @@
     </div>
   </section>
 
-  <!-- Experience timeline -->
+  <!-- Experience -->
   <section class="section" id="experience">
     <h2 data-aos="fade-up">Experience</h2>
     <div class="timeline">
@@ -146,14 +143,16 @@
   <!-- Contact -->
   <section class="section contact" id="contact" data-aos="fade-up">
     <h2>Get in Touch</h2>
-    <p><a href="mailto:arav@umd.edu">arav@umd.edu</a> ·
-       <a href="https://www.linkedin.com/in/arav-grover-a340931ab/">LinkedIn</a> ·
-       <a href="https://github.com/arav0913">GitHub</a></p>
+    <p>
+      <a href="mailto:arav@umd.edu">arav@umd.edu</a> ·
+      <a href="https://www.linkedin.com/in/arav-grover-a340931ab/">LinkedIn</a> ·
+      <a href="https://github.com/arav0913">GitHub</a>
+    </p>
   </section>
 
   <footer class="footer">© 2025 Arav Grover</footer>
 
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script src="script.js"></script>
+  <script src="/script.js?v=6"></script>
 </body>
 </html>
