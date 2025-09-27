@@ -276,45 +276,42 @@ ul,ol{margin:0;padding:0;list-style:none}
   .about-hero__photo{ position: static; margin-top: 8px }
 }
 
-/* === Mobile/Tablet guard: keep Projects inside viewport === */
-.projects-teaser{ overflow-x: hidden; }  /* never allow horizontal scroll */
+/* ---- Mobile-only fixes for Projects teaser (keeps desktop unchanged) ---- */
+@media (max-width: 900px){
+  .projects-teaser{ padding:56px 6% 24px; }
 
-/* Stack layout + tame heading only below 1024px */
-@media (max-width: 1024px){
+  /* Stack vertically: title block first, list after */
   .projects-teaser__inner{
-    grid-template-columns: 1fr;   /* stack list over title */
-    gap: 24px;
+    grid-template-columns: 1fr;
+    gap: 22px;
+    align-items: start;
   }
   .projects-hero{
+    order: -1;                 /* move hero above the list */
     text-align: center;
-    justify-self: center;
-    width: 100%;
+    padding: 0 4%;
   }
   .projects-title{
-    transform: none !important;       /* cancel side-slide on small screens */
-    max-width: 92vw;                   /* prevent overflow */
-    margin-inline: auto;
-    line-height: .92;
-    font-size: clamp(40px, 14vw, 72px);/* scale nicely on phones */
-    overflow-wrap: anywhere;
+    /* smaller cap so it never breaks like "Proje / cts" */
+    font-size: clamp(36px, 22vw, 72px);
+    line-height: 1;
+    transform: none !important;
+    word-break: keep-all;
+    overflow-wrap: normal;
   }
   .projects-rule{
-    width: 120px !important;
-    opacity: .25;
+    width: 120px;
+    opacity: .2;
+    margin: 12px auto 0;
     float: none;
-    display: inline-block;
-    margin-top: 10px;
   }
-  .projects-teaser__inner::after{ display: none; }  /* remove right glow on mobile */
+
+  /* Tighter cards for mobile */
+  .projects-list{ gap: 14px; }
+  .project-item a{ padding: 16px; }
+
+  /* Hide the big right-side glow on mobile */
+  .projects-teaser__inner::after{ display:none; }
 }
 
-/* On touch devices, also neutralize hover transform just in case */
-@media (hover: none){
-  .projects-title{ transform: none !important; }
-}
-
-/* Extra tiny phones */
-@media (max-width: 380px){
-  .projects-title{ font-size: clamp(36px, 15vw, 64px); }
-}
 
