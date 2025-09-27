@@ -276,30 +276,29 @@ ul,ol{margin:0;padding:0;list-style:none}
   .about-hero__photo{ position: static; margin-top: 8px }
 }
 
-/* Keep the big word on one line like About */
-.projects-title{
-  white-space: nowrap;
-  word-break: normal;
-  overflow-wrap: normal;
-}
-
-
-@media (max-width:900px){
+/* --- Mobile-only layout for the Projects teaser --- */
+@media (max-width: 900px){
   .projects-teaser__inner{
     grid-template-columns: 1fr;   /* stack like About */
-    gap: 22px;
+    justify-items: center;        /* center children in the grid */
     align-items: start;
+    gap: 22px;
   }
+
+  /* Title section first, centered, never wraps, auto-shrinks */
   .projects-hero{
-    order: -1;                    /* title above list (like About) */
+    order: -1;                    /* title above the list */
     text-align: center;
-    padding: 0 4%;
+    width: 100%;
+    padding: 0 6%;
   }
   .projects-title{
-    font-size: clamp(36px, 22vw, 72px);
-    line-height: 1;
-    transform: none !important;   /* disable side slide on small screens */
-    white-space: nowrap;          /* keep single line on phones too */
+    font-size: clamp(32px, 17vw, 60px);
+    line-height: 1.02;
+    transform: none !important;
+    white-space: nowrap;          /* keep on one line */
+    word-break: normal;
+    overflow-wrap: normal;
   }
   .projects-rule{
     width: 120px;
@@ -307,7 +306,22 @@ ul,ol{margin:0;padding:0;list-style:none}
     margin: 12px auto 0;
     float: none;
   }
-  .projects-teaser__inner::after{ display:none; } /* calm the wash on mobile */
+
+  /* Card list centered with a comfortable max width */
+  .projects-list{
+    grid-column: 1;
+    width: 100%;
+    max-width: 560px;             /* centers/narrows the column */
+    margin: 6px auto 0;           /* puts it right under the title */
+    display: grid;
+    gap: 14px;
+  }
+  .project-item a{
+    border-radius: 18px;
+  }
+
+  /* Calm the big right-side glow on phones */
+  .projects-teaser__inner::after{ display:none; }
 }
 
 
