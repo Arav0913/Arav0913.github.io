@@ -1,13 +1,9 @@
 // AOS (scroll reveals)
 AOS.init({ duration: 900, easing: "ease-out-cubic", once: true });
 
-// Shrink nav on scroll (optional effect)
-const nav = document.querySelector(".nav");
-
 // Mobile menu toggle
 const burger = document.querySelector('.hamburger');
 const links = document.querySelector('.nav-links');
-
 if (burger && links) {
   burger.addEventListener('click', () => {
     const open = links.classList.toggle('open');
@@ -20,16 +16,9 @@ if (burger && links) {
 (() => {
   const teaser = document.querySelector('.about-teaser');
   if (!teaser) return;
-
-  const io = new IntersectionObserver(
-    entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) teaser.classList.add('active');
-        else teaser.classList.remove('active');
-      });
-    },
-    { threshold: 0.35 }
-  );
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => teaser.classList.toggle('active', e.isIntersecting));
+  }, { threshold: 0.35 });
   io.observe(teaser);
 })();
 
@@ -37,19 +26,11 @@ if (burger && links) {
 (() => {
   const pt = document.querySelector('.projects-teaser');
   if (!pt) return;
-
-  const io = new IntersectionObserver(
-    entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) pt.classList.add('active');
-        else pt.classList.remove('active');
-      });
-    },
-    { threshold: 0.35 }
-  );
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => pt.classList.toggle('active', e.isIntersecting));
+  }, { threshold: 0.35 });
   io.observe(pt);
 })();
-
 
 // Mobile dropdown toggles
 document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
@@ -65,16 +46,6 @@ document.querySelectorAll('.dropdown .dropbtn').forEach(btn => {
   });
 });
 
-// Subtle parallax for hero title
-const heroTitle = document.querySelector(".hero-title");
-if (heroTitle) {
-  document.addEventListener("scroll", () => {
-    const y = window.scrollY;
-    const speed = parseFloat(heroTitle.dataset.speed || 0.35);
-    heroTitle.style.transform = `translateY(${y * speed * 0.25}px)`;
-  });
-}
-
 // Parallax the banner backgrounds
 const banners = document.querySelectorAll(".banner .banner-bg");
 if (banners.length) {
@@ -86,20 +57,4 @@ if (banners.length) {
       bg.style.transform = `scale(1.06) translateY(${(progress - .5) * 16}px)`;
     });
   });
-  // About hero animation trigger
-(() => {
-  const hero = document.querySelector('.about-hero');
-  if (!hero) return;
-
-  const io = new IntersectionObserver(
-    entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) hero.classList.add('active');
-        else hero.classList.remove('active');
-      });
-    },
-    { threshold: 0.4 }
-  );
-  io.observe(hero);
-})();
 }
