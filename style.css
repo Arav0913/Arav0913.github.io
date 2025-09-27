@@ -275,3 +275,46 @@ ul,ol{margin:0;padding:0;list-style:none}
   .about-hero__grid{ grid-template-columns: 1fr }
   .about-hero__photo{ position: static; margin-top: 8px }
 }
+
+/* === Mobile/Tablet guard: keep Projects inside viewport === */
+.projects-teaser{ overflow-x: hidden; }  /* never allow horizontal scroll */
+
+/* Stack layout + tame heading only below 1024px */
+@media (max-width: 1024px){
+  .projects-teaser__inner{
+    grid-template-columns: 1fr;   /* stack list over title */
+    gap: 24px;
+  }
+  .projects-hero{
+    text-align: center;
+    justify-self: center;
+    width: 100%;
+  }
+  .projects-title{
+    transform: none !important;       /* cancel side-slide on small screens */
+    max-width: 92vw;                   /* prevent overflow */
+    margin-inline: auto;
+    line-height: .92;
+    font-size: clamp(40px, 14vw, 72px);/* scale nicely on phones */
+    overflow-wrap: anywhere;
+  }
+  .projects-rule{
+    width: 120px !important;
+    opacity: .25;
+    float: none;
+    display: inline-block;
+    margin-top: 10px;
+  }
+  .projects-teaser__inner::after{ display: none; }  /* remove right glow on mobile */
+}
+
+/* On touch devices, also neutralize hover transform just in case */
+@media (hover: none){
+  .projects-title{ transform: none !important; }
+}
+
+/* Extra tiny phones */
+@media (max-width: 380px){
+  .projects-title{ font-size: clamp(36px, 15vw, 64px); }
+}
+
