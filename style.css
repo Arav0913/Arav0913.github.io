@@ -276,27 +276,24 @@ ul,ol{margin:0;padding:0;list-style:none}
   .about-hero__photo{ position: static; margin-top: 8px }
 }
 
-/* ---- Mobile-only fixes for Projects teaser (keeps desktop unchanged) ---- */
+/* --- Mobile-only: stack projects section + keep "Projects" on one line --- */
 @media (max-width: 900px){
-  .projects-teaser{ padding:56px 6% 24px; }
-
-  /* Stack vertically: title block first, list after */
   .projects-teaser__inner{
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr;         /* stack */
     gap: 22px;
     align-items: start;
   }
   .projects-hero{
-    order: -1;                 /* move hero above the list */
+    order: -1;                           /* title above list */
     text-align: center;
     padding: 0 4%;
   }
   .projects-title{
-    /* smaller cap so it never breaks like "Proje / cts" */
-    font-size: clamp(36px, 22vw, 72px);
+    font-size: clamp(36px, 22vw, 72px);  /* shrink on small screens */
     line-height: 1;
     transform: none !important;
-    word-break: keep-all;
+    white-space: nowrap;                 /* <- keeps it on one line */
+    word-break: normal;
     overflow-wrap: normal;
   }
   .projects-rule{
@@ -305,13 +302,8 @@ ul,ol{margin:0;padding:0;list-style:none}
     margin: 12px auto 0;
     float: none;
   }
-
-  /* Tighter cards for mobile */
-  .projects-list{ gap: 14px; }
-  .project-item a{ padding: 16px; }
-
-  /* Hide the big right-side glow on mobile */
-  .projects-teaser__inner::after{ display:none; }
+  .projects-teaser__inner::after{ display:none; }  /* remove big glow on mobile */
 }
+
 
 
