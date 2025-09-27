@@ -1,60 +1,81 @@
-<!-- Sticky Glass Navbar -->
-<header class="nav">
-  <div class="nav-inner">
-    <a class="brand" href="/">Arav Grover</a>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>About – Arav Grover</title>
 
-    <nav class="nav-links" aria-label="Primary">
-      <a href="/">Home</a>
-      <a href="/about.html">About</a>
+  <!-- Root-absolute so it works from any folder -->
+  <link rel="stylesheet" href="/style.css?v=8" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+</head>
+<body>
 
-      <!-- Projects dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
-          Projects
-          <span class="chev">▾</span>
-        </button>
-        <div class="dropdown-menu" role="menu">
-          <a role="menuitem" href="/projects/chatbot.html">AI Chatbot</a>
-          <a role="menuitem" href="/projects/nutriwise.html">NutriWise</a>
-          <a role="menuitem" href="/projects/waste-food.html">Waste Food Management</a>
+  <!-- Sticky Glass Navbar (same as index) -->
+  <header class="nav">
+    <div class="nav-inner">
+      <a class="brand" href="/">ARAV GROVER</a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="/">Home</a>
+        <a href="/about.html" aria-current="page">About</a>
+
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+            Projects <span class="chev">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a role="menuitem" href="/projects/chatbot.html">AI Chatbot</a>
+            <a role="menuitem" href="/projects/nutriwise.html">NutriWise</a>
+            <a role="menuitem" href="/projects/waste-food.html">Waste Food Management</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Experience dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
-          Experience
-          <span class="chev">▾</span>
-        </button>
-        <div class="dropdown-menu" role="menu">
-          <a role="menuitem" href="/experience/pwc.html">PwC</a>
-          <a role="menuitem" href="/experience/capgemini.html">Capgemini</a>
-          <a role="menuitem" href="/experience/karo-sambhav.html">Karo Sambhav</a>
-          <a role="menuitem" href="/experience/nsls.html">NSLS</a>
-          <a role="menuitem" href="/experience/anon.html">Anon</a>
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+            Experience <span class="chev">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a role="menuitem" href="/experience/pwc.html">PwC</a>
+            <a role="menuitem" href="/experience/capgemini.html">Capgemini</a>
+            <a role="menuitem" href="/experience/karo-sambhav.html">Karo Sambhav</a>
+            <a role="menuitem" href="/experience/nsls.html">NSLS</a>
+            <a role="menuitem" href="/experience/anon.html">Anon</a>
+          </div>
         </div>
-      </div>
 
-      <!-- Certifications dropdown -->
-      <div class="dropdown">
-        <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
-          Certifications
-          <span class="chev">▾</span>
-        </button>
-        <div class="dropdown-menu" role="menu">
-          <a role="menuitem" href="/certs/palantir.html">Palantir</a>
-          <a role="menuitem" href="/certs/go.html">Go</a>
-          <a role="menuitem" href="/certs/google-python.html">Google Python</a>
-          <a role="menuitem" href="/certs/deeplearning-ai.html">DeepLearning.AI</a>
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">
+            Certifications <span class="chev">▾</span>
+          </button>
+          <div class="dropdown-menu" role="menu">
+            <a role="menuitem" href="/certs/palantir.html">Palantir</a>
+            <a role="menuitem" href="/certs/go.html">Go</a>
+            <a role="menuitem" href="/certs/google-python.html">Google Python</a>
+            <a role="menuitem" href="/certs/deeplearning-ai.html">DeepLearning.AI</a>
+          </div>
         </div>
-      </div>
 
-      <a href="/#contact">Contact</a>
-    </nav>
+        <a href="/#contact">Contact</a>
+      </nav>
 
-    <!-- Mobile hamburger -->
-    <button class="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Your About page content -->
+  <section class="section" style="min-height:60vh">
+    <h1 data-aos="fade-up">About</h1>
+    <p data-aos="fade-up" data-aos-delay="120">
+      Quick intro here… (replace with your real about content).
+    </p>
+  </section>
+
+  <footer class="footer">© 2025 Arav Grover</footer>
+
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script src="/script.js?v=8" defer></script>
+</body>
+</html>
