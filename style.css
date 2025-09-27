@@ -276,25 +276,30 @@ ul,ol{margin:0;padding:0;list-style:none}
   .about-hero__photo{ position: static; margin-top: 8px }
 }
 
-/* --- Mobile-only: stack projects section + keep "Projects" on one line --- */
-@media (max-width: 900px){
+/* Keep the big word on one line like About */
+.projects-title{
+  white-space: nowrap;
+  word-break: normal;
+  overflow-wrap: normal;
+}
+
+
+@media (max-width:900px){
   .projects-teaser__inner{
-    grid-template-columns: 1fr;         /* stack */
+    grid-template-columns: 1fr;   /* stack like About */
     gap: 22px;
     align-items: start;
   }
   .projects-hero{
-    order: -1;                           /* title above list */
+    order: -1;                    /* title above list (like About) */
     text-align: center;
     padding: 0 4%;
   }
   .projects-title{
-    font-size: clamp(36px, 22vw, 72px);  /* shrink on small screens */
+    font-size: clamp(36px, 22vw, 72px);
     line-height: 1;
-    transform: none !important;
-    white-space: nowrap;                 /* <- keeps it on one line */
-    word-break: normal;
-    overflow-wrap: normal;
+    transform: none !important;   /* disable side slide on small screens */
+    white-space: nowrap;          /* keep single line on phones too */
   }
   .projects-rule{
     width: 120px;
@@ -302,8 +307,9 @@ ul,ol{margin:0;padding:0;list-style:none}
     margin: 12px auto 0;
     float: none;
   }
-  .projects-teaser__inner::after{ display:none; }  /* remove big glow on mobile */
+  .projects-teaser__inner::after{ display:none; } /* calm the wash on mobile */
 }
+
 
 
 
